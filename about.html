@@ -1,0 +1,72 @@
+<!--
+File: about.html
+Purpose: About page for CST-120 Milestone 1
+Author: Venus Martinez
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+
+<!-- Background color style in the body tag to change color of entire page's background -->
+
+<body style="background-color: rgb(225, 129, 142)">
+    
+    <!-- About page heading, aligned to the center of the page -->
+    
+    <h1 style="text-align: center;">About Me</h1>
+    
+    <!-- Links to other pages of the website -->
+    
+    <nav>
+
+        <!-- Used the style tag to remove the bullet points and the top to bottom list format -->
+        
+        <ul style="list-style-type: none; padding: 0; display: flex; gap: 15px; justify-content: center;">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Description of the author. "&apos;" is used to create apostraphes.
+     The "br" tag is utilized to create link breaks while keeping information from the same "p" tag together.
+     Creating an entirely new "p" tag creates a gap between on "p" tag line and another -->
+
+    <p><strong>Hi, I&apos;m Venus Martinez.</strong> <br />
+        I&apos;m originally from Buffalo, New York and moved to Phoenix, Arizona in 2016.</p>
+    <p style="color: green;">I&apos;m working toward my Bachelor&apos;s in Software Development and I&apos;m excited to
+        strengthen my web development skills.</p>
+
+    <!-- Image with float, which allows following text to appear on the side opposite chosen for the float attribute.
+    Image also contains margin-right to create a further gap between the image and the text. 
+    The width and height are set to specific amounts to control the image size. -->
+
+    <img src="images/Venus-Martinez.jpg" alt="This is me, Venus Martinez." style="float: left; margin-right:45px"
+        width="150" height="200">
+    
+    <!-- List of interests with a heading to proceed the section -->
+    
+    <h2 style="margin-top:55px">Quick Facts</h2>
+    
+    <ul style="padding-bottom:75px; font-family: sans-serif;">
+        <li>Interested in web development and software development</li>
+        <li>Strongest skills: HTML and CSS</li>
+        <li>Most excited to learn more JavaScript and GitHub</li>
+    </ul>
+
+</body>
+
+<!-- Copyright in the footer -->
+
+<footer>
+
+    <p style="font-size: small; text-align: center; font-style: italic;">© 2026 Venus Martinez</p>
+
+</footer>
+
+</html>
