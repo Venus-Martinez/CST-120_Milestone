@@ -11,6 +11,8 @@ Author: Venus Martinez
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hobbies</title>
     <style>
+        /* This is some basic styling for the table to improve readability.
+        It creates more spacing between the text and the borders of the table without having to edit the style of each row individually. */
         td,
         th {
             padding-left: 15px;
@@ -22,21 +24,31 @@ Author: Venus Martinez
 
 <body style="background-color: rgb(74, 190, 124);">
     <div>
+        <!-- The heading of the new Hobbies page to let viewers know what the rest of this page is about and to confirm that they have navigated to the right place. -->
         <h1 style="text-align: center;">Hobbies</h1>
+        <!-- Navigation is just like the other pages to make the feel of the pages consistent throughout the site. -->
         <nav>
             <ul style="list-style-type: none; padding: 0; display: flex; gap: 15px; justify-content: center;">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
+                <!-- The hobbies.html link was added to the navigation bar on this and the other pages of the website.-->
                 <li><a href="hobbies.html">Hobbies</a></li>
             </ul>
         </nav>
+        <!-- This heading is a brief description of what is to follow on the page. -->
         <h3>
             This page shares some of my hobbies and interests that I enjoy during my free time.
         </h3>
 
         <div>
+            <!-- This is a very basic example of a table, with this table having only one column. 
+             The table is centered on the page with a width set to only cover half of the device width. 
+             It also has a slim border surrounding each cell that is 1px in thickness. -->
             <table align="center" border="1" width="50%">
+                <!-- The above table tag indicates the start of the table, the subsequent tags are tr, th, and td.
+                 These below tags indicate things like "table row", "table header", and "table data." -->
                 <tr>
+                    <!-- In the th, or table header, I have specified alignment to the center of the table. -->
                     <th align="center">Hobbies &amp; Interests</th>
                 </tr>
                 <tr>
@@ -58,7 +70,7 @@ Author: Venus Martinez
                     <td align="left">Personal growth and learning new skills</td>
                 </tr>
             </table>
-
+            <!-- This paragraph below is just a little extra information to give the viewer some more context. -->
             <p>
                 These hobbies help me stay creative, motivated, and balanced while working toward my degree in Software
                 Development.
@@ -66,28 +78,47 @@ Author: Venus Martinez
 
             <h2 style="text-align: center;">Visual & Audio Representations</h2>
             <br />
+            <!-- The div tag is utilized here to specify that the alignment of the videos and audio contained within are centered on the page. -->
             <div align="center">
-
+                <!-- This is a video tag that shows a video of someone coding.
+                 The width and the height of the video are set to control the exact size of the video on any device.
+                 The controls attribute is in place to allow the user to control playback. -->
                 <video width="640" height="360" controls>
+                    <!-- The source is set to the video file in my media folder.
+                     The type is set to "video/mp4" to allow the web browser to interpret and decode the file. -->
                     <source src="media/CodingHobbyVideo.mp4" type="video/mp4">
+                    <!-- The text below is a fallback message for browsers that do not support the video tag. -->
                     Your browser does not support the video tag.
                 </video>
                 <br />
+                <!-- This was not a requirement of this assignment, but as something we recently learned, I felt it was a nice addition to this portion of the page.
+                 The SVG (Scalable Vector Graphics) tag allows graphics and text to be rendered directly within the HTML document.
+                 SVG elements are defined using XML and can include text, shapes, and paths, which may be styled or animated using CSS or SVG animation elements. -->
                 <svg width="565" height="20">
+                    <!-- This text tag is used to specify the text content, size, and color of the animated element. -->
                     <text x="125" y="15" fill="red">
                         Coding often fills my time even outside of class!
+                        <!-- The animate tag is used to create the animation effect. 
+                         The attributeType is set to CSS to specify what the animation is for.
+                         The attributeName is set to specify how the animation appears.
+                         The values are set to create the fade in and out effect by setting the starting opacity to 1 which is entirely visible, then 0 which is completely invisible, and back to 1 again.
+                         The dur attribute is set to 3 seconds to control how fast the animation occurs.
+                         The repeatCount is set to indefinite to allow the animation to continue forever. -->
                         <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="3s"
                             repeatCount="indefinite" />
                     </text>
+                    <!-- The text below is a fallback message for browsers that do not support inline SVG. -->
                     Sorry, your browser does not support inline SVG.
                 </svg>
                 <br />
                 <br />
+                <!-- The video here was created in the same manner as the previous video tag. -->
                 <video width="640" height="360" controls>
                     <source src="media/StrangerThingsHobbyVideo.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <br />
+                <!-- This svg tag was created in the same manner as the previous svg tag. -->
                 <svg width="620" height="20">
                     <text x="125" y="15" fill="red">
                         Netflix is my go-to for unwinding with some good shows!
@@ -98,11 +129,17 @@ Author: Venus Martinez
                 </svg>
                 <br />
                 <br />
+                <!-- This audio tag has similar engineering to the video tags that come before it.
+                 The audio tag, however, does not need to be specified with a certain width and height.-->
                 <audio controls>
+                    <!-- The audio tag uses the source attribute in the same manner as the above video tags.
+                     When specifying the type, the source type is then set to "audio/mp3" -->
                     <source src="media/PromptEngineerRapAnthemAudio.mp3" type="audio/mp3">
+                    <!-- Again, like the video and the svg tags, the audio tag has the following text as a fallback message for browsers that do not support the audio tag. -->
                     Your browser does not support the audio tag.
                 </audio>
                 <br />
+                <!-- The third and final svg tag on the page that, again, was created like the svg tags prior to it. -->
                 <svg width="600" height="20">
                     <text x="125" y="15" fill="red">
                         This is a fun little rap anthem having to do with coding!
@@ -116,6 +153,7 @@ Author: Venus Martinez
         </div>
 
     </div>
+    <!-- Copyright in the footer -->
     <footer>
         <p style="font-size: small; text-align: center; font-style: italic;">© 2026 Venus Martinez</p>
     </footer>
