@@ -1,0 +1,339 @@
+/*
+File: styles.css
+Purpose: Stylesheet added in CST-120 Milestone 3
+Author: Venus Martinez
+*/
+
+/* This "styles.css" file applies styles to the elements of the entire website. */
+
+/* The following styles are applied to the body of each page based on the class assigned to it. This allows for different background colors for each page while maintaining a consistent font and layout across the entire website.
+*/
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    line-height: 1.5;
+}
+
+body.page-home {
+    background-color: #F5F5DC;
+}
+
+body.page-about {
+    background-color: #FF9999;
+}
+
+body.page-hobbies {
+    background-color: #8aed7d;
+}
+
+/* The universal selector ("*") is used to apply the box-sizing property to all elements on every page. This ensures that the padding and border of each element are included in its total width and height, making it easier to manage the layout and spacing of elements across the website. */
+
+* {
+    box-sizing: border-box;
+}
+
+/* The main element is styled with padding to create space around the content, improving readability and ensuring that the text and other elements do not touch the edges of the page. */
+
+main {
+    padding: 20px;
+}
+
+/* The .container class is applied to the main content of each page to set a max width and center the content on the page creating a more visually appealing layout and improving readability. */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* The following styles are applied to the animated ball on the Hobbies page. */
+
+#ball {
+    /* The ball width and height */
+    width:50px;
+    height: 50px;
+    padding: 6px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    /* The ball color */
+    background: #ff0389;
+    /* Makes the ball a ball by making it rounded */
+    border-radius: 50%;
+    /* The "fixed" position allows the ball to move across the entire viewport even while scrolling, while "absolute" would limit the ball's movement to the area of its nearest positioned ancestor and "relative" would position the ball relative to its normal position in the document flow. */
+    position: fixed;
+    /* The "bounceX" and "bounceY" animations are applied to the ball, with different durations and timing functions to create a dynamic and visually interesting movement across the screen. The "infinite" keyword allows the animations to repeat indefinitely, while "alternate" causes the animations to reverse direction on each iteration, creating a bouncing effect. */
+    animation:
+        bounceX 4.7s linear infinite alternate,
+        bounceY 3.3s linear infinite alternate;
+    z-index: 1;
+}
+
+@keyframes bounceX {
+    from {
+        left: 0;
+    }
+    to {
+        left: calc(100vw - 50px);
+    }
+}
+
+@keyframes bounceY {
+    from {
+        top: 0;
+    }
+    to {
+        top: calc(100vh - 50px);
+    }
+}
+
+/* Hidden pop-up message when ball is caught */
+
+#caught {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#caught:target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.pop-up {
+    background-color: #8aed7d;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 18px;
+    z-index: 9999;
+}
+.close-button {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: right;
+    font-family: sans-serif;
+}
+
+/* The following styles are  applied to allow the .ball animation to move behind the header and footer while still being visible on top of main content. */
+
+audio, video, svg, main {
+    position: relative;
+    z-index: 0;
+}
+
+header, footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* Accessibility: Disables motion effects for users who prefer reduced motion. */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* The following styles are applied to the headings on each page to create a welcoming and visually appealing fade-in effect when the page loads. The animation is defined using keyframes that transition the opacity and position of the headings from an initial state to their final appearance. */
+
+h1 {
+    text-align: center;
+    text-shadow: 3px 2px 2px #00000069;
+    animation: fadeInDown 0.9s ease-out;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* The following style is applied to ensure only the h2 heading on the hobbies page is centered while the h2 headings on the other pages remain left-aligned. */
+
+.h2-hobbies {
+    text-align: center;
+}
+
+/* The following styles are applied to the h3 class "guide" used to bring attention to the "Start Here" section on the homepage. The animation creates a blinking effect by changing the opacity and color of the text at different intervals, making it stand out and guide visitors to important links on the page. */
+
+h3.guide {
+    text-align: left;
+    margin: 10px;
+    animation: blinkInOut 2.8s linear infinite;
+}
+
+@keyframes blinkInOut {
+    0%, 100% {
+        opacity: 1;
+        color: #0000FF;
+    }
+    30%, 70% {
+        opacity: 0.5;
+        color: #FF0000;
+    }
+    50% {
+        opacity: 0;
+        color: #00FF00;
+    }
+}
+
+/* <p> tags will be styled as follows, unless they have a specific class or id applied to them, or if inline or internal styling takes precendence. */
+
+p {
+    color: #333333;
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 20px;
+}
+
+/* The paragraph following the table on the about page has its own class to allow for different styling. */
+
+p.table-follow-up {
+    text-align: center;
+    font-size: 16px;
+    color: #444;
+    margin-top: 20px;
+}
+
+/* The paragraph in the "Start Here" section on the homepage has its own class to allow for different styling. */
+
+p.start-here {
+    font-size: 16px;
+
+}
+
+/* The following styles are applied to the navigation bar. It uses flexbox to create a horizontal layout with spacing between the links, and includes a border and background color for visual separation from the rest of the page. */
+
+.nav {
+    align-items: center;
+    list-style-type: none;
+    padding: 5px;
+    display: flex;
+    gap: 55px;
+    justify-content: center;
+    border:#333333 solid 1px;
+    background-color: #f0f0f0;
+}
+
+/* focus-visible is used to apply an outline to the navigation links when they are focused, improving accessibility for keyboard users. The outline is styled with a solid black color and an offset to create a clear visual indication of which link is currently focused. */
+
+.nav a:focus-visible {
+    outline: 3px solid #000;
+    outline-offset: 3px;
+}
+
+/* The following styles are applied to the navigation links. They include a transition effect that increases the height and font size of the links when hovered over, creating a dynamic and interactive user experience. */
+
+#home-link a, #about-link a, #hobbies-link a {
+    height: 100%;
+    font-size: 16px;
+    transition: height 0.3s, font-size 0.3s;
+}
+
+#home-link a:hover, #about-link a:hover, #hobbies-link a:hover {
+    height: 120%;
+    font-size: 18px;
+}
+
+table {
+    margin: 10px auto;
+    align-items: center;
+    border: 1px solid #333;
+    width: 50%;
+}
+
+/* Applied colors to the backgrounds and text to allow for better readability. */
+
+th {
+    text-align: center;
+    background-color: #006969;
+    color: white;
+    font-size: 20px;
+}
+
+td {
+    text-align: left;
+    background-color: #0fdffd;
+    color: #000;
+    font-size: 17px;
+}
+th, td {
+    border: 1px solid #333;
+    padding-left: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+/* The .media-center class is applied to the div containing the media elements instead of having the style inline as I had previously done. */
+.media-center {
+    text-align: center;
+}
+
+/* Width and Height set here for <video> and <svg>, instead of inline, to allow for better readability and easier maintenance. */
+
+video {
+    width: 640px;
+    height: 360px;
+}
+
+.svg-video-1 {
+    width: 565px;
+    height: 20px;
+}
+
+.svg-video2-audio {
+    width: 620px;
+    height: 20px;
+}
+
+/* <img> styles applied here for better readability and to allow for easier maintenance. */
+
+img {
+    float: left;
+    margin-top: 10px;
+    margin-right: 40px;
+    margin-bottom: 0;
+    margin-left: 5px;
+}
+
+/* Quick Facts has it's own class to allow for different styling. */
+.quick-facts {
+    font-family: sans-serif;
+}
+
+/* The .card class is applied to the div elements on all pages to ensure consistent styling across the website. */
+
+.card {
+    border: 1px solid #333;
+    padding: 15px;
+    margin: 20px;
+    background-color: white;
+}
+
+/* Copyright styling was moved to this file to allow for better readability and easier maintenance. */
+
+.copyright {
+    color: #666666;
+    font-size: 14px;
+    margin-top: 20px;
+    text-align: center;
+}

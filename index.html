@@ -10,52 +10,62 @@ Author: Venus Martinez
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <!-- Stylesheet added to website to allow for CSS to be utilized across all pages -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 
-<body style="background-color: #F5F5DC;">
+<body class="page-home">
     <header>
-    <!-- Welcoming visitors -->
-    <h1 style="text-align: center;">Welcome To My Home Page</h1>
-    <!-- Links to other pages of the website -->
-    <nav>
-        <ul style="list-style-type: none; padding: 0; display: flex; gap: 15px; justify-content: center;">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="hobbies.html">Hobbies</a></li>
-        </ul>
-    </nav>
-    <!-- Introductory paragraph -->
-    <p>
-        Welcome to my CST-120 milestone website. My name is Venus Martinez, and I am working toward a Bachelor’s in
-        Software Development.
-        I am originally from Buffalo, New York, and I moved to Phoenix, Arizona in 2016.
-        This site will grow throughout the course as I build more pages and add new features.
-    </p>
+        <!-- Welcoming visitors -->
+        <h1>Welcome To My Home Page</h1>
+        <!-- Links to other pages of the website -->
+        <nav>
+            <ul class="nav">
+                <li id="home-link"><a href="index.html">Home</a></li>
+                <li id="about-link"><a href="about.html">About</a></li>
+                <li id="hobbies-link"><a href="hobbies.html">Hobbies</a></li>
+            </ul>
+        </nav>
+        <hr />
     </header>
-    <hr />
-    <main>
-    <!-- Highlights of the website -->
-    <h2>What You Will Find Here</h2>
-    <ul>
-        <li><b>About Me:</b> <i>a brief background and quick facts</i></li>
-        <li><b>Hobbies:</b> <i>a few interests that keep me balanced</i></li>
-    </ul>
-    <h2>Coming Soon</h2>
-    <ul>
-        <li><b>Events:</b> <i>reminders and important dates related to school and personal goals</i></li>
-        <li><b>Photos:</b> <i>images included as part of this project</i></li>
-        <li><b>Contact:</b> <i>ways to reach me</i></li>
-    </ul>
+
+    <main class="container">
+        <!-- Introductory paragraph -->
+
+        <p>
+            Welcome to my CST-120 milestone website. My name is Venus Martinez, and I am working toward a Bachelor’s in
+            Software Development.
+            I am originally from Buffalo, New York, and I moved to Phoenix, Arizona in 2016.
+            This site will grow throughout the course as I build more pages and add new features.
+        </p>
+        <div class="card">
+        <!-- Highlights of the website -->
+        <h2>What You Will Find Here</h2>
+        <ul>
+            <li><b>About Me:</b> <i>a brief background and quick facts</i></li>
+            <li><b>Hobbies:</b> <i>a few interests that keep me balanced</i></li>
+        </ul>
+        <h2>Coming Soon</h2>
+        <ul>
+            <li><b>Events:</b> <i>reminders and important dates related to school and personal goals</i></li>
+            <li><b>Photos:</b> <i>images included as part of this project</i></li>
+            <li><b>Contact:</b> <i>ways to reach me</i></li>
+        </ul>
+        </div>
+        <br />
     </main>
-    <hr />
+
     <footer>
-    <!-- Featured links to guide visitors -->
-    <h3>Start Here</h3>
-    <h4><a href="about.html">About Me</a> includes a short introduction and quick facts.</h4>
-    <h4><a href="hobbies.html">Hobbies</a> shares some of the interests and activities I enjoy.</h4>
-    <hr />
-    <!-- Copyright -->
-        <p style="font-size: small; text-align: center; font-style: italic;">© 2026 Venus Martinez</p>
+        <hr />
+        <!-- Featured links to guide visitors -->
+        <h3 class="guide">Start Here</h3>
+        <p class="start-here"><a href="about.html">About Me</a> includes a short introduction and quick facts.</p>
+        <p class="start-here"><a href="hobbies.html">Hobbies</a> shares some of the interests and activities I enjoy.</p>
+
+        <br />
+        <!-- Copyright in the footer -->
+
+        <p class="copyright"><em>© 2026 Venus Martinez</em></p>
     </footer>
 </body>
 
