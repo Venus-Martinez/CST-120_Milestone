@@ -313,6 +313,7 @@ img {
     margin-right: 40px;
     margin-bottom: 0;
     margin-left: 5px;
+    padding-bottom: 15px;
 }
 
 /* Quick Facts has it's own class to allow for different styling. */
