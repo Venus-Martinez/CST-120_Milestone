@@ -1,0 +1,88 @@
+<!--
+File: photos.html
+Purpose: Photos page for CST-120 Milestone 4
+Author: Venus Martinez
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos</title>
+    <!-- Google Fonts added to website -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Federant&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page-photos">
+    <header>
+        <!--Title of the page-->
+        <h1>Photos</h1>
+        <!--Links to other pages of the website-->
+        <nav>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="photos.html">Photos</a></li>
+            </ul>
+        </nav>
+        <!--Brief page description-->
+        <p>
+            This page includes a small collection of images that represent my personal interests and experiences.
+        </p>
+        <hr />
+    </header>
+    <main class="container">
+        <section class="card">
+            <h2>Photo Collection</h2>
+            <p>This page demonstrates CSS Flexbox with wrapping and spacing to display images in a responsive grid
+                layout.</p>
+        </section>
+        <!-- Flexbox Gallery -->
+        <section class="photo-grid card">
+            <!-- Replace src values with actual image filenames -->
+            <figure class="photo-item">
+                <img src="images/Downtown-Buffalo.jpg" alt="My hometown of Buffalo, New York">
+                <figcaption>Buffalo, NY<br />My Hometown</figcaption>
+            </figure>
+
+            <figure class="photo-item">
+                <img src="images/LakeShoreEagles.webp" alt="My High School's Mascot">
+                <figcaption>Lake Shore Central School District<br />We Are The Eagles</figcaption>
+            </figure>
+
+            <figure class="photo-item">
+                <img src="images/GrandCanyonUniversity-Logo.png" alt="Grand Canyon University Logo">
+                <figcaption>Grand Canyon University<br />The School I Currently Attend</figcaption>
+            </figure>
+
+            <figure class="photo-item">
+                <img src="images/Venus-Martinez.jpg" alt="Me, Venus Martinez">
+                <figcaption>A Picture Of Me<br />Venus Martinez</figcaption>
+            </figure>
+
+            <figure class="photo-item">
+                <img src="images/Dunkin-BaskinRobbins.webp" alt="Dunkin and Baskin Robbins Combo Store">
+                <figcaption>My Current Employment<br />Dunkin &amp; Baskin Robbins</figcaption>
+            </figure>
+
+            <figure class="photo-item">
+                <img src="images/GitHub-Profile.jpeg" alt="My GitHub Profile">
+                <figcaption>My GitHub Profile<br />Venus-Martinez</figcaption>
+            </figure>
+        </section>
+        <br />
+    </main>
+    <!--Copyright in the footer-->
+    <footer>
+        <hr />
+        <p class="copyright"><em>© 2026 Venus Martinez</em></p>
+    </footer>
+</body>
+
+</html>

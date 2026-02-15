@@ -11,6 +11,10 @@ Author: Venus Martinez
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <!-- Google Fonts added to website -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Federant&display=swap" rel="stylesheet">
     <!-- Stylesheet added to website to allow for CSS to be utilized across all pages -->
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -31,9 +35,11 @@ Author: Venus Martinez
             <!-- Used the style tag to remove the bullet points and the top to bottom list format -->
 
             <ul class="nav">
-                <li id="home-link"><a href="index.html">Home</a></li>
-                <li id="about-link"><a href="about.html">About</a></li>
-                <li id="hobbies-link"><a href="hobbies.html">Hobbies</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="hobbies.html">Hobbies</a></li>
+                <!-- The photos.html link was added to the navigation bar on this and the other pages of the website. (Milestone 4) -->
+                <li><a href="photos.html">Photos</a></li>
             </ul>
         </nav>
         <hr />
@@ -47,27 +53,23 @@ Author: Venus Martinez
 
         <p><strong>Hi, I&apos;m Venus Martinez.</strong> <br />
             I&apos;m originally from Buffalo, New York and moved to Phoenix, Arizona in 2016.</p>
-        <p style="color: #065223;">I&apos;m working toward my Bachelor&apos;s in Software Development and I&apos;m
-            excited
-            to
-            strengthen my web development skills.</p>
+        <p class="about-highlight">I&apos;m working toward my Bachelor&apos;s in Software Development and I&apos;m excited to strengthen my web development skills.</p>
 
         <div class="card">
-        <!-- Image with float, which allows following text to appear on the side opposite chosen for the float attribute.
+            <!-- Image with float, which allows following text to appear on the side opposite chosen for the float attribute.
     Image also contains margin-right to create a further gap between the image and the text. 
     The width and height are set to specific amounts to control the image size. -->
 
-        <img src="images/Venus-Martinez.jpg" alt="This is me, Venus Martinez."
-            width="150" height="200">
+            <img id="about-me-img" src="images/Venus-Martinez.jpg" alt="This is me, Venus Martinez." width="150" height="200">
 
-        <!-- List of interests with a heading to proceed the section -->
-        <h2 style="margin-top:55px">Quick Facts</h2>
+            <!-- List of interests with a heading to proceed the section -->
+            <h2 class="quick-facts-header">Quick Facts</h2>
 
-        <ul class="quick-facts">
-            <li>Interested in web development and software development</li>
-            <li>Strongest skills: HTML and CSS</li>
-            <li>Most excited to learn more JavaScript and GitHub</li>
-        </ul>
+            <ul class="quick-facts">
+                <li>Interested in web development and software development</li>
+                <li>Strongest skills: HTML and CSS</li>
+                <li>Most excited to learn more JavaScript and GitHub</li>
+            </ul>
         </div>
     </main>
 

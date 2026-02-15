@@ -10,7 +10,7 @@ Author: Venus Martinez
 */
 
 body {
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Federant', serif; /* Google Fonts added to the website. Changed from 'Times New Roman', Times, serif. */
     margin: 0;
     line-height: 1.5;
 }
@@ -25,6 +25,10 @@ body.page-about {
 
 body.page-hobbies {
     background-color: #8aed7d;
+}
+
+body.page-photos {
+    background-color: #c5d5dd; /* Added to the Photos page */
 }
 
 /* The universal selector ("*") is used to apply the box-sizing property to all elements on every page. This ensures that the padding and border of each element are included in its total width and height, making it easier to manage the layout and spacing of elements across the website. */
@@ -205,6 +209,10 @@ p {
     margin: 20px;
 }
 
+p.about-highlight {
+    color: #065223; /* Style moved from inline to external CSS */
+}
+
 /* The paragraph following the table on the about page has its own class to allow for different styling. */
 
 p.table-follow-up {
@@ -221,17 +229,39 @@ p.start-here {
 
 }
 
-/* The following styles are applied to the navigation bar. It uses flexbox to create a horizontal layout with spacing between the links, and includes a border and background color for visual separation from the rest of the page. */
+p.larger {
+    font-size: larger; /* Style moved from internal to external CSS from the Hobbies page */
+}
 
-.nav {
+/* The following styles are applied to the navigation bar. It uses flexbox to create a horizontal layout with spacing between the links, and includes a border and background color for visual separation from the rest of the page. */
+/* The .nav class I previously used was changed to a more specific "ul.nav" while the "nav" selector was added for overall styling of the navigation bar to allow for better readability and easier maintenance. */
+
+nav {
+    align-items: center;
+    padding: 5px;
+    border: #333333 solid 1px;
+    background-color: #f0f0f0;
+}
+
+/* .nav {
     align-items: center;
     list-style-type: none;
     padding: 5px;
+    gap: 55px;
+    justify-content: center;
+    border: #333333 solid 1px;
+    background-color: #f0f0f0;
+    }  
+    The styling commented out here was the previous version of coding I had for the navigation section.
+*/
+
+ul.nav {
+    list-style-type: none;
     display: flex;
     gap: 55px;
     justify-content: center;
-    border:#333333 solid 1px;
-    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 /* focus-visible is used to apply an outline to the navigation links when they are focused, improving accessibility for keyboard users. The outline is styled with a solid black color and an offset to create a clear visual indication of which link is currently focused. */
@@ -242,7 +272,22 @@ p.start-here {
 }
 
 /* The following styles are applied to the navigation links. They include a transition effect that increases the height and font size of the links when hovered over, creating a dynamic and interactive user experience. */
+/* These were changed from individual link styles to a more general style for all links within the navigation bar to allow for easier maintenance and better readability. */
 
+nav a {
+    height: 100%;
+    font-size: 16px;
+    transition: height 0.3s, font-size 0.3s;
+}
+
+/* The font-size was increased to 32px on hover to create a more noticeable effect, also making it easier for users to see which link they are hovering over. */
+
+nav a:hover {
+    height: 120%;
+    font-size: 32px;
+}
+
+/* 
 #home-link a, #about-link a, #hobbies-link a {
     height: 100%;
     font-size: 16px;
@@ -253,6 +298,8 @@ p.start-here {
     height: 120%;
     font-size: 18px;
 }
+    The styling commented out here was more of the previous version of coding I had for the navigation links.
+*/
 
 table {
     margin: 10px auto;
@@ -292,21 +339,29 @@ th, td {
 
 video {
     width: 640px;
-    height: 360px;
+    max-width: 100%; /* Added to ensure the video is responsive and does not exceed the width of its container on smaller screens. */
+    height: auto; /* Changed from a fixed height to auto to maintain the aspect ratio of the video and prevent distortion. */
 }
 
 .svg-video-1 {
-    width: 565px;
-    height: 20px;
+    width: 100%; /* Added to ensure the SVG is responsive and scales appropriately on different screen sizes. */
+    max-width: 565px; /* Added to set a maximum width for the SVG, preventing it from becoming too large on larger screens while still allowing it to scale down on smaller screens. */
+    height: auto; /* Changed from a fixed height to auto to maintain the aspect ratio of the SVG and prevent distortion. */
+    display: block; /* Added to ensure the SVG is treated as a block-level element, allowing it to take up the full width of its container and enabling the margin auto centering to work effectively. */
+    margin: 0 auto; /* Added to center the SVG horizontally within its container. */
 }
 
-.svg-video2-audio {
-    width: 620px;
-    height: 20px;
+.svg-video2-audio { /* Changed in the same way as the .svg-video-1 class to ensure consistency in styling and responsiveness across all media elements on the Hobbies page. (Milestone 4) */
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 /* <img> styles applied here for better readability and to allow for easier maintenance. */
 
+/* The original version:
 img {
     float: left;
     margin-top: 10px;
@@ -315,8 +370,59 @@ img {
     margin-left: 5px;
     padding-bottom: 15px;
 }
+    This original styling would have made all images, including those on the Photos page style the same, which is not ideal. The new styling allows for different styles to be applied to the images on the About Me page and the Photos page, creating a more visually appealing and cohesive design for each page. (Milestone 4)
+*/
+
+#about-me-img {
+    float: left;
+    margin: 10px 40px 0 5px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    max-width: 220px;
+}
+
+/* Photos page Flexbox gallery */
+.photo-grid {
+  display: flex;
+  flex-wrap: wrap;              /* IMPORTANT: shows wrapping */
+  gap: 16px;                    /* Clean spacing between items */
+  justify-content: center;      /* Keeps layout centered */
+  align-items: stretch;
+  margin: 20px;
+  padding: 20px;
+}
+
+.photo-item {
+  flex: 1 1 200px;              /* Grow, shrink, base width */
+  max-width: 260px;             /* Prevents overly wide items */
+  border: 2px solid #000;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+}
+
+.photo-item img {
+    float: none;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+}
+
+.photo-item figcaption {
+  text-align: center;
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
 
 /* Quick Facts has it's own class to allow for different styling. */
+
+.quick-facts-header { /* Added to the Photos page to style the "Quick Facts" section header differently from the other h2 headings on the website. */
+    margin-top: 10px;
+    padding-top: 5px;
+}
+
 .quick-facts {
     font-family: sans-serif;
 }
