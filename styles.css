@@ -6,6 +6,14 @@ Author: Venus Martinez
 
 /* This "styles.css" file applies styles to the elements of the entire website. */
 
+/* The .federant-regular class is applied to the headings on the photos page to give them a unique and visually appealing font style. The "Federant" font is a decorative serif font that has been embedded from fonts.google.com */
+
+.federant-regular {      /* Not currently in use, but this class exemplifies how to apply the "Federant" font to specific elements of the website. */
+    font-family: "Federant", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* The following styles are applied to the body of each page based on the class assigned to it. This allows for different background colors for each page while maintaining a consistent font and layout across the entire website.
 */
 
@@ -425,13 +433,16 @@ img {
 
 .quick-facts {
     font-family: sans-serif;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 /* The .card class is applied to the div elements on all pages to ensure consistent styling across the website. */
 
 .card {
     border: 1px solid #333;
-    padding: 15px;
+    padding: 15px 15px 50px 15px;
     margin: 20px;
     background-color: white;
 }
