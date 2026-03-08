@@ -54,8 +54,8 @@ function setupAboutPage() {
 }
 
 function setupPhotosPage() {
-    // Select all gallery images so each one can respond when clicked
-    const photoImages = document.querySelectorAll(".photo-item img");
+    // Select all photos that contain a custom popup message
+    const photoImages = document.querySelectorAll("#photoGridSection img[data-message]");
 
     // Add a click event to every image in the gallery
     photoImages.forEach((img) => {

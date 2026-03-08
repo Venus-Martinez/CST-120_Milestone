@@ -1,7 +1,7 @@
 <!--
 File: photos.html
 Purpose: Photos page for sharing a small collection of images that represent my personal interests and experiences
-Testing/Processing: Bootstrap Carousel added to create a slideshow of photos (Milestone 6)
+Testing/Processing: Bootstrap Carousel added to create a slideshow of photos
 Author: Venus Martinez
 -->
 
@@ -43,9 +43,12 @@ Author: Venus Martinez
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="navHome">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="navAbout">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="hobbies.html" data-i18n="navHobbies">Hobbies</a></li>
-                        <li class="nav-item"><a class="nav-link" href="photos.html" data-i18n="navPhotos">Photos</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="navContact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="hobbies.html" data-i18n="navHobbies">Hobbies</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="photos.html" data-i18n="navPhotos">Photos</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="navContact">Contact</a>
+                        </li>
                     </ul>
 
                     <!-- Language selection (Milestone 4) -->
@@ -69,17 +72,16 @@ Author: Venus Martinez
     <main class="container site-container">
         <section class="card">
             <h2>Photo Collection</h2>
-            <p>This page, which once demonstrated CSS Flexbox with wrapping and spacing to display images in a
-                responsive grid layout, now uses Bootstrap&apos;s grid system for responsive design.</p>
+            <p>This page now uses a Bootstrap carousel to display photos in a slideshow format, allowing visitors to move through the images one at a time.</p>
         </section>
         <div class="row justify-content-center">
             <div class="col-auto">
-                <!-- jQuery show/hide demo: toggles the photo gallery (Milestone 6) -->
+                <!-- jQuery show/hide demo: toggles the photo carousel (Milestone 6) -->
                 <button id="toggle-photo-grid" type="button" class="btn btn-primary btn-sm mb-3">Hide or Show Photo
-                    Gallery</button>
+                    Carousel</button>
             </div>
         </div>
-        <!-- Message shown only when the photo gallery is hidden (Milestone 6) -->
+        <!-- Message shown only when the photo carousel is hidden (Milestone 6) -->
         <div id="photoHiddenMessage" class="card text-center p-3 mb-3 d-none">
             <p class="mb-0">
                 You come to the Photos page and hide the photos? That&apos;s like going to a restaurant and asking the
@@ -87,78 +89,86 @@ Author: Venus Martinez
             </p>
         </div>
         <!-- Bootstrap responsive grid gallery (Milestone 6) -->
-        <section class="card justify-content-center" id="photoGridSection">
-            <div class="row g-3 px-3 py-3 px-md-5 py-md-5 m-2 justify-content-center">
-                <!-- Photos are aligned in a grid format using Bootstrap components -->
-                <figure class="col-12 col-sm-6 col-lg-4">
-                    <div class="photo-item h-100">
-                        <div class="ratio ratio-4x3">
-                            <img class="w-100 h-100 object-fit-cover" src="images/Downtown-Buffalo.jpg"
+        <section class="card justify-content-center p-3" id="photoGridSection">
+            <h2 class="text-center mb-3">Photo Collection</h2>
+
+            <div id="photoCarousel" class="carousel slide" data-bs-ride="false">
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="text-center">
+                            <img class="d-block mx-auto img-fluid" src="images/Downtown-Buffalo.jpg"
                                 alt="My hometown of Buffalo, New York" data-message="Go Bills!">
+                            <figcaption class="mt-2">Buffalo, NY<br />My Hometown</figcaption>
                         </div>
-                        <figcaption>Buffalo, NY<br />My Hometown</figcaption>
                     </div>
-                </figure>
 
-                <figure class="col-12 col-sm-6 col-lg-4">
-                    <div class="photo-item h-100">
-                        <div class="ratio ratio-4x3">
-                            <img class="w-100 h-100 object-fit-contain" src="images/GrandCanyonUniversity-Logo.png"
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <img class="d-block mx-auto img-fluid" src="images/GrandCanyonUniversity-Logo.png"
                                 alt="Grand Canyon University Logo" data-message="Lopes Up!">
+                            <figcaption class="mt-2">Grand Canyon University<br />The School I Currently Attend
+                            </figcaption>
                         </div>
-                        <figcaption>Grand Canyon University<br />The School I Currently Attend</figcaption>
                     </div>
-                </figure>
 
-                <figure class="col-12 col-sm-6 col-lg-4">
-                    <div class="photo-item h-100">
-                        <div class="ratio ratio-4x3">
-                            <img class="w-100 h-100 object-fit-cover" src="images/LakeShoreEagles.webp"
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <img class="d-block mx-auto img-fluid" src="images/LakeShoreEagles.webp"
                                 alt="My High School's Mascot" data-message="Keep soaring!">
+                            <figcaption class="mt-2">Lake Shore Central School District<br />We Are The Eagles
+                            </figcaption>
                         </div>
-                        <figcaption>Lake Shore Central School District<br />We Are The Eagles</figcaption>
                     </div>
-                </figure>
 
-                <figure class="col-12 col-sm-6 col-lg-4">
-                    <div class="photo-item h-100">
-                        <div class="ratio ratio-4x3">
-                            <img class="w-100 h-100 object-fit-contain" src="images/Venus-Martinez.jpg"
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <img class="d-block mx-auto img-fluid" src="images/Venus-Martinez.jpg"
                                 alt="Me, Venus Martinez" data-message="Hey, that's me!">
+                            <figcaption class="mt-2">A Picture Of Me<br />Venus Martinez</figcaption>
                         </div>
-                        <figcaption>A Picture Of Me<br />Venus Martinez</figcaption>
                     </div>
-                </figure>
 
-                <figure class="col-12 col-sm-6 col-lg-4">
-                    <div class="photo-item h-100">
-                        <div class="ratio ratio-4x3">
-                            <img class="w-100 h-100 object-fit-cover" src="images/Dunkin-BaskinRobbins.webp"
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <img class="d-block mx-auto img-fluid" src="images/Dunkin-BaskinRobbins.webp"
                                 alt="Dunkin and Baskin Robbins Combo Store" data-message="Welcome to DBR!">
+                            <figcaption class="mt-2">My Current Employment<br />Dunkin &amp; Baskin Robbins</figcaption>
                         </div>
-                        <figcaption>My Current Employment<br />Dunkin &amp; Baskin Robbins</figcaption>
                     </div>
-                </figure>
 
-                <figure class="col-12 col-sm-6 col-lg-4">
-                    <div class="photo-item h-100">
-                        <div class="ratio ratio-4x3">
-                            <img class="w-100 h-100 object-fit-contain" src="images/GitHub-Profile.jpeg"
+                    <div class="carousel-item">
+                        <div class="text-center">
+                            <img class="d-block mx-auto img-fluid" src="images/GitHub-Profile.jpeg"
                                 alt="My GitHub Profile" data-message="No seriously, check it out!">
+                            <figcaption class="mt-2">My GitHub Profile<br />Venus-Martinez</figcaption>
                         </div>
-                        <figcaption>My GitHub Profile<br />Venus-Martinez</figcaption>
                     </div>
-                </figure>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
-            <br />
-            <p class="text-center mb-0">Click on the images for a special message!</p>
+
+            <p class="text-center mt-3 mb-0">Click on the images for a special message!</p>
         </section>
         <br />
     </main>
     <!-- Footer: consistent with other pages -->
     <footer class="container text-center mt-4 mb-4">
         <hr />
-        <small><em>Copyright &copy; 2026 <a class="text-decoration-none text-reset" href="https://github.com/Venus-Martinez">Venus Martinez</a></em></small>
+        <small><em>Copyright &copy; 2026 <a class="text-decoration-none text-reset"
+                    href="https://github.com/Venus-Martinez">Venus Martinez</a></em></small>
     </footer>
     <!-- Latest jQuery (Bootstrap 5 does not need it) -->
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
