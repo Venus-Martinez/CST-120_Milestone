@@ -1,57 +1,39 @@
 <!--
 File: hobbies.html
 Purpose: Hobbies page for sharing some of the interests and activities I enjoy
-Testing/Processing: jQuery click event added to toggle the visibility of the hobbies list (Mil
 Author: Venus Martinez
 -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hobbies</title>
-    <!-- Google Fonts added to website -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Federant&display=swap" rel="stylesheet">
-    <!-- Latest Bootstrap 5 CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body class="page-hobbies">
-    <!-- Animated "bouncing ball" added in Milestone 3 to demonstrate CSS keyframe animation. -->
-    <div id="ball"></div>
     <header>
-        <!-- The heading of the new Hobbies page to let viewers know what the rest of this page is about and to confirm that they have navigated to the right place. -->
         <h1 class="p-4" data-i18n="hobbiesTitle">Hobbies</h1>
-        <!-- Navigation is just like the other pages to make the feel of the pages consistent throughout the site. -->
-        <!-- Bootstrap Navbar: responsive menu system for Milestone 6 -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light border">
             <div class="container-fluid">
                 <a class="navbar-brand" href="index.html">Venus</a>
-
-                <!-- Hamburger button appears on smaller screens -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                     aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="mainNavbar">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.html" data-i18n="navHome">Home</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html" data-i18n="navAbout">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="hobbies.html" data-i18n="navHobbies">Hobbies</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="photos.html" data-i18n="navPhotos">Photos</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="navContact">Contact</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link active" href="hobbies.html" data-i18n="navHobbies" aria-current="page">Hobbies</a></li>
+                        <li class="nav-item"><a class="nav-link" href="photos.html" data-i18n="navPhotos">Photos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html" data-i18n="navContact">Contact</a></li>
                     </ul>
-
-                    <!-- Language selection (kept from Milestone 4) -->
                     <div class="d-flex align-items-center gap-2">
                         <label class="form-label mb-0" for="languageSelect">Language or Idioma:</label>
                         <select class="form-select form-select-sm w-auto" id="languageSelect">
@@ -62,139 +44,80 @@ Author: Venus Martinez
                 </div>
             </div>
         </nav>
-
-        <!-- This paragraph is a brief description of what is to follow on the page. -->
-        <p class="larger">
+        <hr />
+    </header>
+    <main class="container site-container">
+        <p>
             <strong data-i18n="hobbiesIntro">This page shares some of my hobbies and interests that I enjoy during my
                 free time.</strong>
         </p>
-        <hr />
-        <!-- jQuery show/hide buttons for ball animation and videos/audio (Milestone 6) -->
-        <div class="container row g-1 d-flex flex-wrap justify-content-center">
-            <div class="col-12 col-md-3 p-1 d-flex justify-content-center justify-content-md-start">
-                <button id="toggle-ball" class="btn btn-outline-primary btn-sm" type="button">Toggle Bouncing
-                    Ball</button>
-            </div>
-            <div class="col-12 col-md-3 p-1 d-flex justify-content-center justify-content-md-start">
-                <button id="toggle-media" class="btn btn-outline-primary btn-sm" type="button">Toggle Videos and
-                    Audio</button>
-            </div>
-        </div>
-    </header>
-
-    <main class="container site-container">
-        <br />
-        <!-- Card class added to make styling consistent across webpages. -->
-        <div class="card">
-                <!-- Bootstrap-styled semantic table -->
-                <div class="table-responsive">
-                    <table class="table table-bordered table-striped table-hover mb-2 align-middle hobbies-table">
-                        <thead class="table-header">
-                            <tr>
-                                <th scope="col">Hobbies &amp; Interests</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Learning web development and programming</td>
-                            </tr>
-                            <tr>
-                                <td>Working with HTML and CSS</td>
-                            </tr>
-                            <tr>
-                                <td>Exploring new technology tools</td>
-                            </tr>
-                            <tr>
-                                <td>Watching TV shows and movies</td>
-                            </tr>
-                            <tr>
-                                <td>Listening to music and relaxing</td>
-                            </tr>
-                            <tr>
-                                <td>Personal growth and learning new skills</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <section class="card">
+            <h2 class="h4 mb-3">Interests</h2>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="interest-item">Web development and programming</div>
                 </div>
-                <p class="table-follow-up">
-                    These hobbies help me stay creative, motivated, and balanced while working toward my degree in
-                    Software Development.
-                </p>
-        </div>
-        <br />
-        <!-- Media header -->
+                <div class="col-md-6">
+                    <div class="interest-item">Learning new technology tools</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="interest-item">Film and television</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="interest-item">Music and downtime for balance</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="interest-item">Personal growth and skill building</div>
+                </div>
+                <div class="col-md-6">
+                    <div class="interest-item">Exploring front end design</div>
+                </div>
+            </div>
+            <p class="table-follow-up mb-0">
+                These interests help me stay creative, curious, and balanced while working toward a career in software
+                development.
+            </p>
+        </section>
         <div id="mediaSection">
             <div class="row g-2 justify-content-center">
                 <div class="justify-content-center">
-                    <h2 class="h2-hobbies">Visual & Audio Representations</h2>
-                    <br />
-                    <!-- Media section: demonstrates HTML5 <video> and <audio> elements with controls and fallback text. -->
+                    <h2 class="h4 text-center mb-4">A Few Things I Enjoy</h2>
                     <div class="media-center">
-                        <!-- This is a video tag that shows a video of someone coding.
-                             The width and the height of the video are set to control the exact size of the video on any device.
-                             I have set attributes of autoplay and mute so that the video starts playing automatically without sound upon page load.
-                             The controls attribute is in place to allow the user to control playback. -->
-                        <video autoplay muted controls>
-                            <!-- The source is set to the video file in my media folder.
-                                 The type is set to "video/mp4" to allow the web browser to interpret and decode the file. -->
-                            <source src="media/CodingHobbyVideo.mp4" type="video/mp4">
-                            <!-- The text below is a fallback message for browsers that do not support the video tag. -->
-                            Your browser does not support the video tag.
-                        </video>
-                        <br />
-                        <!-- Replaced SVG tag with a paragraph for the animated line -->
-                        <p class="animated-line">Coding often fills my time even outside of class!</p>
-                        <br />
-                        <br />
-                        <!-- The video here was created in the same manner as the previous video tag, except that with this video I added the attribute loop so that the video plays continuously. -->
-                        <video autoplay muted controls loop>
-                            <source src="media/StrangerThingsHobbyVideo.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <br />
-                        <!-- Replaced SVG tag with a paragraph for the animated line -->
-                        <p class="animated-line">Netflix is my go-to for unwinding with some good shows!</p>
-                        <br />
-                        <br />
-                        <!-- This audio tag has similar engineering to the video tags that come before it.
-                             The audio tag, however, does not need to be specified with a certain width and height.
-                             I have also included an autoplay attribute so that the music starts playing upon page load. -->
-                        <audio class="audio-responsive" controls> <!-- autoplay -->
-                            <!-- The audio tag uses the source attribute in the same manner as the above video tags.
-                                 When specifying the type, the source type is then set to "audio/mp3" -->
-                            <source src="media/PromptEngineerRapAnthemAudio.mp3" type="audio/mp3">
-                            <!-- Again, like the video and the svg tags, the audio tag has the following text as a fallback message for browsers that do not support the audio tag. -->
-                            Your browser does not support the audio tag.
-                        </audio>
-                        <br />
-                        <!-- Replaced SVG tag with a paragraph for the animated line -->
-                        <p class="animated-line">This is a fun little rap anthem having to do with coding!</p>
-                        <br />
-                        <!-- This was added here to allow a user to toggle the bouncing ball from the bottom of the page while viewing videos -->
-                        <button id="toggle-ball2" class="btn btn-outline-primary btn-sm" type="button">Show/Hide
-                            Ball</button>
+                        <div class="media-block">
+                            <video autoplay muted controls>
+                                <source src="media/CodingHobbyVideo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>I enjoy spending time building and exploring coding projects outside of class.</p>
+                        </div>
+                        <div class="media-block">
+                            <video autoplay muted controls loop>
+                                <source src="media/StrangerThingsHobbyVideo.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>Film and television are one of my favorite ways to relax and recharge.</p>
+                        </div>
+                        <div class="media-block">
+                            <audio class="audio-responsive" controls>
+                                <source src="media/PromptEngineerRapAnthemAudio.mp3" type="audio/mp3">
+                                Your browser does not support the audio tag.
+                            </audio>
+                            <p>Music adds creativity and energy to my downtime.</p>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </main>
-    <!-- Footer: consistent with other pages -->
     <footer class="container text-center mt-4 mb-4">
         <hr />
         <small><em>Copyright &copy; 2026 <a class="text-decoration-none text-reset"
                     href="https://github.com/Venus-Martinez">Venus Martinez</a></em></small>
     </footer>
-    <!-- Latest jQuery (Bootstrap 5 does not need it) -->
-    <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-
-    <!-- Latest Bootstrap 5 Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
-
     <script src="js/i18n.js" defer></script>
     <script src="js/site.js" defer></script>
 </body>
-
 </html>
