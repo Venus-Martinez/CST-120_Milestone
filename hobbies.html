@@ -86,37 +86,40 @@ Author: Venus Martinez
         <br />
         <!-- Card class added to make styling consistent across webpages. -->
         <div class="card">
-            <!-- Simple one-column table (Milestone requirement): uses <table>, <tr>, <th>, and <td> to list hobbies and interests. -->
-            <table>
-                <!-- Table header row -->
-                <tr>
-                    <th>Hobbies &amp; Interests</th>
-                </tr>
-                <!-- Table data rows -->
-                <tr>
-                    <td>Learning web development and programming</td>
-                </tr>
-                <tr>
-                    <td>Working with HTML and CSS</td>
-                </tr>
-                <tr>
-                    <td>Exploring new technology tools</td>
-                </tr>
-                <tr>
-                    <td>Watching TV shows and movies</td>
-                </tr>
-                <tr>
-                    <td>Listening to music and relaxing</td>
-                </tr>
-                <tr>
-                    <td>Personal growth and learning new skills</td>
-                </tr>
-            </table>
-            <!-- This paragraph below is just a little extra information to give the viewer some more context. -->
-            <p class="table-follow-up">
-                These hobbies help me stay creative, motivated, and balanced while working toward my degree in Software
-                Development.
-            </p>
+                <!-- Bootstrap-styled semantic table -->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover mb-2 align-middle hobbies-table">
+                        <thead class="table-header">
+                            <tr>
+                                <th scope="col">Hobbies &amp; Interests</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Learning web development and programming</td>
+                            </tr>
+                            <tr>
+                                <td>Working with HTML and CSS</td>
+                            </tr>
+                            <tr>
+                                <td>Exploring new technology tools</td>
+                            </tr>
+                            <tr>
+                                <td>Watching TV shows and movies</td>
+                            </tr>
+                            <tr>
+                                <td>Listening to music and relaxing</td>
+                            </tr>
+                            <tr>
+                                <td>Personal growth and learning new skills</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p class="table-follow-up">
+                    These hobbies help me stay creative, motivated, and balanced while working toward my degree in
+                    Software Development.
+                </p>
         </div>
         <br />
         <!-- Media header -->
@@ -139,27 +142,8 @@ Author: Venus Martinez
                             Your browser does not support the video tag.
                         </video>
                         <br />
-                        <!-- This was not a requirement of this assignment, but as something we recently learned, I felt it was a nice addition to this portion of the page.
-                             The SVG (Scalable Vector Graphics) tag allows graphics and text to be rendered directly within the HTML document.
-                             SVG elements are defined using XML and can include text, shapes, and paths, which may be styled or animated using CSS or SVG animation elements. -->
-                        <svg class="svg-video-1" viewBox="0 0 565 20" preserveAspectRatio="xMidYMid meet">
-                            <!-- Defines the SVG’s internal coordinate system and allows it to scale responsively while staying centered and maintaining proper proportions on smaller screens. (Milestone 4) -->
-                            <!-- This text tag is used to specify the text content, size, and color of the animated element. -->
-                            <text x="50%" y="15" fill="red" text-anchor="middle">
-                                <!-- Centers the SVG text horizontally so it remains aligned even when the SVG resizes (Milestone 4) -->
-                                Coding often fills my time even outside of class!
-                                <!-- The animate tag is used to create the animation effect. 
-                                     The attributeType is set to CSS to specify what the animation is for.
-                                     The attributeName is set to specify how the animation appears.
-                                     The values are set to create the fade in and out effect by setting the starting opacity to 1 which is entirely visible, then 0 which is completely invisible, and back to 1 again.
-                                     The dur attribute is set to 3 seconds to control how fast the animation occurs.
-                                     The repeatCount is set to indefinite to allow the animation to continue forever. -->
-                                <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="3s"
-                                    repeatCount="indefinite" />
-                            </text>
-                            <!-- The text below is a fallback message for browsers that do not support inline SVG. -->
-                            Sorry, your browser does not support inline SVG.
-                        </svg>
+                        <!-- Replaced SVG tag with a paragraph for the animated line -->
+                        <p class="animated-line">Coding often fills my time even outside of class!</p>
                         <br />
                         <br />
                         <!-- The video here was created in the same manner as the previous video tag, except that with this video I added the attribute loop so that the video plays continuously. -->
@@ -168,23 +152,14 @@ Author: Venus Martinez
                             Your browser does not support the video tag.
                         </video>
                         <br />
-                        <!-- This svg tag was created in the same manner as the previous svg tag. -->
-                        <svg class="svg-video2-audio" viewBox="0 0 565 20" preserveAspectRatio="xMidYMid meet">
-                            <!-- Defines the SVG’s internal coordinate system and allows it to scale responsively while staying centered and maintaining proper proportions on smaller screens (Milestone 4) -->
-                            <text x="50%" y="15" fill="red" text-anchor="middle">
-                                <!-- Centers the SVG text horizontally so it remains aligned even when the SVG resizes (Milestone 4) -->
-                                Netflix is my go-to for unwinding with some good shows!
-                                <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="3s"
-                                    repeatCount="indefinite" />
-                            </text>
-                            Sorry, your browser does not support inline SVG.
-                        </svg>
+                        <!-- Replaced SVG tag with a paragraph for the animated line -->
+                        <p class="animated-line">Netflix is my go-to for unwinding with some good shows!</p>
                         <br />
                         <br />
                         <!-- This audio tag has similar engineering to the video tags that come before it.
                              The audio tag, however, does not need to be specified with a certain width and height.
                              I have also included an autoplay attribute so that the music starts playing upon page load. -->
-                        <audio controls> <!-- autoplay -->
+                        <audio class="audio-responsive" controls> <!-- autoplay -->
                             <!-- The audio tag uses the source attribute in the same manner as the above video tags.
                                  When specifying the type, the source type is then set to "audio/mp3" -->
                             <source src="media/PromptEngineerRapAnthemAudio.mp3" type="audio/mp3">
@@ -192,17 +167,8 @@ Author: Venus Martinez
                             Your browser does not support the audio tag.
                         </audio>
                         <br />
-                        <!-- The third and final svg tag on the page that, again, was created like the svg tags prior to it. -->
-                        <svg class="svg-video2-audio" viewBox="0 0 565 20" preserveAspectRatio="xMidYMid meet">
-                            <!-- Defines the SVG’s internal coordinate system and allows it to scale responsively while staying centered and maintaining proper proportions on smaller screens (Milestone 4) -->
-                            <text x="50%" y="15" fill="red" text-anchor="middle">
-                                <!-- Centers the SVG text horizontally so it remains aligned even when the SVG resizes (Milestone 4)-->
-                                This is a fun little rap anthem having to do with coding!
-                                <animate attributeType="CSS" attributeName="opacity" values="1;0;1" dur="3s"
-                                    repeatCount="indefinite" />
-                            </text>
-                            Sorry, your browser does not support inline SVG.
-                        </svg>
+                        <!-- Replaced SVG tag with a paragraph for the animated line -->
+                        <p class="animated-line">This is a fun little rap anthem having to do with coding!</p>
                         <br />
                         <!-- This was added here to allow a user to toggle the bouncing ball from the bottom of the page while viewing videos -->
                         <button id="toggle-ball2" class="btn btn-outline-primary btn-sm" type="button">Show/Hide
@@ -216,7 +182,8 @@ Author: Venus Martinez
     <!-- Footer: consistent with other pages -->
     <footer class="container text-center mt-4 mb-4">
         <hr />
-        <small><em>Copyright &copy; 2026 <a class="text-decoration-none text-reset" href="https://github.com/Venus-Martinez">Venus Martinez</a></em></small>
+        <small><em>Copyright &copy; 2026 <a class="text-decoration-none text-reset"
+                    href="https://github.com/Venus-Martinez">Venus Martinez</a></em></small>
     </footer>
     <!-- Latest jQuery (Bootstrap 5 does not need it) -->
     <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
